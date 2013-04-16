@@ -13,6 +13,7 @@ source 'https://rubygems.org'
   gem "simple_form", ">= 2.1.0"
   gem "figaro", ">= 0.6.3"
   gem "libv8", ">= 3.11.8"
+  gem 'will_paginate' # Pagination
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

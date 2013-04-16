@@ -7,6 +7,7 @@
 	<title><%= content_for?(:title) ? yield(:title) : "Chsdesk Saas" %></title>
 	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chsdesk Saas" %>">
 	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= render 'layouts/stylesheets' %>
 	<!-- google font -->
 	<link href="http://fonts.googleapis.com/css?family=Aclonica:regular" rel="stylesheet" type="text/css" />
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -14,9 +15,7 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	<%= csrf_meta_tags %>
-	<%= yield(:head) %>
 		
-	<%= render 'layouts/stylesheets' %>
   </head>
 
   <body>
@@ -65,26 +64,30 @@
         ================================================== -->
 		<%= javascript_include_tag "application" %>
 		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-		<script src="js/jquery.js"></script>
 		<script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script>
-		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/uniform/jquery.uniform.js"></script>
-		<script src="js/peity/jquery.peity.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/uniform/jquery.uniform.js"></script>
+		<script src="../js/peity/jquery.peity.js"></script>
 		
-		<script src="js/select2/select2.js"></script>
-		<script src="js/knob/jquery.knob.js"></script>
-		<script src="js/flot/jquery.flot.js"></script>
-		<script src="js/flot/jquery.flot.resize.js"></script>
-		<script src="js/flot/jquery.flot.categories.js"></script>
-		<script src="js/wysihtml5/wysihtml5-0.3.0.js"></script>
-		<script src="js/wysihtml5/bootstrap-wysihtml5.js"></script>
-		<script src="js/calendar/fullcalendar.js"></script> <!-- this plugin required jquery ui-->
-
+		<script src="../js/select2/select2.js"></script>
+		<script src="../js/knob/jquery.knob.js"></script>
+		<script src="../js/flot/jquery.flot.js"></script>
+		<script src="../js/flot/jquery.flot.resize.js"></script>
+		<script src="../js/flot/jquery.flot.categories.js"></script>
+		<script src="../js/wysihtml5/wysihtml5-0.3.0.js"></script>
+		<script src="../js/wysihtml5/bootstrap-wysihtml5.js"></script>
+		<script src="../js/calendar/fullcalendar.js"></script> <!-- this plugin required jquery ui-->
+        
+        <script src="../js/validate/jquery.metadata.js"></script>
+        <script src="../js/validate/jquery.validate.js"></script>
+ 
         <!-- required stilearn template js, for full feature-->
-        <script src="js/holder.js"></script>
-        <script src="js/stilearn-base.js"></script>
-
+        <script src="../js/holder.js"></script>
+        <script src="../js/stilearn-base.js"></script>
+		<link id="style-base" href="../css/stilearn.css" rel="stylesheet">
+		<link id="style-responsive" href="../css/stilearn-responsive.css" rel="stylesheet">
+		<link id="style-helper" href="../css/stilearn-helper.css" rel="stylesheet">
+ 
         <script type="text/javascript">
             $(document).ready(function() {
                 // try your js

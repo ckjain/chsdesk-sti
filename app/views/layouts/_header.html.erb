@@ -14,14 +14,14 @@
 				<%= render 'layouts/header/button' %>
                 <div class="btn-group user-group">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <img class="corner-all" align="middle" src="img/user-thumb.jpg" title="John Doe" alt="john doe" /> <!--this for display on PC device-->
+                        <img class="corner-all" align="middle" src="../img/user-thumb.jpg" title="John Doe" alt="john doe" /> <!--this for display on PC device-->
                         <button class="btn btn-small btn-inverse">John Doe</button> <!--this for display on tablet and phone device-->
                     </a>
                     <ul class="dropdown-menu dropdown-user" role="menu" aria-labelledby="dLabel">
                         <li>
 							<div class="media">
 							    <a class="pull-left" href="#">
-							        <img class="img-circle" src="img/user.jpg" title="profile" alt="profile" />
+							        <img class="img-circle" src="../img/user.jpg" title="profile" alt="profile" />
 							    </a>
 							    <div class="media-body description">
 									<% if user_signed_in? %>
@@ -30,13 +30,20 @@
 									<p class="action"><a class="link" href="#">Activity</a> - <a class="link" href="#">Setting</a></p>
 									<a href="bonus-page/resume/index.html" class="btn btn-primary btn-small btn-block">View Profile</a>
 									<% end %>
-						        </div>
-						    </div>
+								</div>
+							</div>
 						</li>
 						<li class="dropdown-footer">
-						    <div>
+							<div>
 							<% if user_signed_in? %>
 								<a class="btn btn-small" <%= link_to ('Logout'), destroy_user_session_path, :method => "delete" %></a>
+								<a class="btn btn-small" <%= link_to 'Edit account', edit_user_registration_path %></a>
+								<% if current_user.has_role? :admin %>
+								<li>
+								<a class="btn btn-small" <%= link_to 'Admin', users_path %></a>
+									
+								</li>
+								<% end %>
 							<% else %>
 								<a class="btn btn-small" <%= link_to('Login', new_user_session_path)  %></a>
 								<a class="btn btn-small pull-right" <%= link_to('Sign up', new_user_registration_path)  %></a>

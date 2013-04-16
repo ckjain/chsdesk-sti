@@ -1,6 +1,9 @@
 ChsdeskSti::Application.routes.draw do
 
 
+  resources :activities
+
+
 #Devise with CanCan and Twitter Bootstrap---begin
   authenticated :user do
     root :to => 'home#index'
